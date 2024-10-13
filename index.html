@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Quiz</title>
+    <style>
+        body {
+            background-image: url('https://avatars.mds.yandex.net/get-entity_search/5735732/791114449/S600xU_2x'); /* Замените на реальную ссылку на изображение тыквы */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: orange;
+            text-shadow: 2px 2px 5px black;
+        }
+        .question {
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ffa500;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Halloween Quiz</h1>
+
+    <div class="question">
+        <p>1. What color is a pumpkin?</p>
+        <div class="options">
+            <input type="radio" id="q1a" name="q1" value="A">
+            <label for="q1a">A) Green</label><br>
+            <input type="radio" id="q1b" name="q1" value="B">
+            <label for="q1b">B) Orange</label><br>
+            <input type="radio" id="q1c" name="q1" value="C">
+            <label for="q1c">C) Blue</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2. What animal flies at night and says “hoot”?</p>
+        <div class="options">
+            <input type="radio" id="q2a" name="q2" value="A">
+            <label for="q2a">A) Dog</label><br>
+            <input type="radio" id="q2b" name="q2" value="B">
+            <label for="q2b">B) Owl</label><br>
+            <input type="radio" id="q2c" name="q2" value="C">
+            <label for="q2c">C) Cat</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>3. What do kids say when they knock on doors for candy?</p>
+        <div class="options">
+            <input type="radio" id="q3a" name="q3" value="A">
+            <label for="q3a">A) Merry Christmas</label><br>
+            <input type="radio" id="q3b" name="q3" value="B">
+            <label for="q3b">B) Trick or treat</label><br>
+            <input type="radio" id="q3c" name="q3" value="C">
+            <label for="q3c">C) Happy Easter</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>4. Which creature has sharp teeth and drinks blood?</p>
+        <div class="options">
+            <input type="radio" id="q4a" name="q4" value="A">
+            <label for="q4a">A) Ghost</label><br>
+            <input type="radio" id="q4b" name="q4" value="B">
+            <label for="q4b">B) Vampire</label><br>
+            <input type="radio" id="q4c" name="q4" value="C">
+            <label for="q4c">C) Witch</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>5. What do you wear on Halloween?</p>
+        <div class="options">
+            <input type="radio" id="q5a" name="q5" value="A">
+            <label for="q5a">A) A costume</label><br>
+            <input type="radio" id="q5b" name="q5" value="B">
+            <label for="q5b">B) A swimsuit</label><br>
+            <input type="radio" id="q5c" name="q5" value="C">
+            <label for="q5c">C) Pajamas</label>
+        </div>
+    </div>
+
+    <button onclick="checkAnswers()">Submit</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="q3"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="q4"]:checked')?.value === 'B') score++;
+            if (document.querySelector('input[name="q5"]:checked')?.value === 'A') score++;
+
+            document.getElementById('result').textContent = 'You scored ' + score + ' out of 5!';
+        }
+    </script>
+
+</body>
+</html>
